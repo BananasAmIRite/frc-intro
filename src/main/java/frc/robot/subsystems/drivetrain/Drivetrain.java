@@ -35,7 +35,7 @@ public class Drivetrain extends SubsystemBase {
     private final AHRS gyro = new AHRS(SPI.Port.kMXP);
 
     private final DifferentialDrive differentialDrive = new DifferentialDrive(leftMotors, rightMotors);
-    private final DifferentialDriveOdometry odemetry = new DifferentialDriveOdometry(gyro.getRotation2d());
+    private final DifferentialDriveOdometry odometry = new DifferentialDriveOdometry(gyro.getRotation2d());
 
     private final SlewRateLimiter throttleFilter = new SlewRateLimiter(Constants.kThrottleFilter);
     private final SlewRateLimiter turnFilter = new SlewRateLimiter(Constants.kTurnFilter);
@@ -74,5 +74,9 @@ public class Drivetrain extends SubsystemBase {
             throttleFilter.calculate(throttle),
             turnFilter.calculate(turn)
         );
+    }
+
+    public Rotation2D getRotation2D() {
+        odometry.getPoseMeters().getRotation(); 
     }
 }
