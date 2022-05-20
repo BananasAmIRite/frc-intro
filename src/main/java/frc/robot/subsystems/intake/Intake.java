@@ -22,9 +22,6 @@ public class Intake extends SubsystemBase {
         intakeMotor = new CANSparkMax(port, CANSparkMaxLowLevel.MotorType.kBrushless); 
     }
 
-    @Override
-    public void periodic() {}
-
     public void setRotationPower(float pow) {
         this.rotationPower = pow;  
     }
