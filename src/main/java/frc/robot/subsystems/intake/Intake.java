@@ -18,7 +18,7 @@ public class Intake extends SubsystemBase {
     private final CANSparkMax intakeMotor;
     private float rotationPower = 1; 
 
-    public Intake (int port) {
+    public Intake(int port) {
         intakeMotor = new CANSparkMax(port, CANSparkMaxLowLevel.MotorType.kBrushless); 
     }
 
