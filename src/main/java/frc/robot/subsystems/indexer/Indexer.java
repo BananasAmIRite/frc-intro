@@ -18,7 +18,7 @@ public class Indexer extends SubsystemBase {
     private final CANSparkMax indexMotor;
     private float rotationPower = 1; 
 
-    public Intake(int port) {
+    public Indexer(int port) {
         indexMotor = new CANSparkMax(port, CANSparkMaxLowLevel.MotorType.kBrushless); 
     }
 
